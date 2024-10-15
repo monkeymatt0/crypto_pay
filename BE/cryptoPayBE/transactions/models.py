@@ -12,5 +12,8 @@ class Transaction(models.Model):
     status = models.CharField(max_length=20, default="Pending")
     timestamp = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+        db_table = "transactions"
+
     def __str__(self):
         return f"Transaction {self.txHash}: {self.status}"
