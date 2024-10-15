@@ -1,0 +1,6 @@
+.env
+.DS_Store
+BE/cryptoPayBE/env
+BE/cryptoPayBE/cryptoPayBE/__pycache__/*
+BE/cryptoPayBE/transactions/__pycache__/*
+BE/cryptoPayBE/transactions/migrations/__pycache__/*
