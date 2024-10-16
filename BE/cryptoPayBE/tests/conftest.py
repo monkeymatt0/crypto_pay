@@ -1,10 +1,8 @@
 import pytest
-from datetime import datetime
-from transactions.models import Transaction
 from rest_framework.test import APIClient
 
-# This file will contain only fixture
 
+# This file will contain only fixture
 # {  
 #    Reference data for testing
 #    "txHash": "0xabc123def4567890abc123def4567890abc123def4567890abc123def4567890",
@@ -20,7 +18,7 @@ def api_client() -> APIClient:
      return APIClient()
 
 @pytest.fixture
-def get_transaction_payload() -> Transaction:
+def get_transaction_payload_201() -> dict:
      return {  
           "txHash": "0xabc123def4567890abc123def4567890abc123def4567890abc123def4567890",
           "senderAddress": "0x1111222233334444555566667777888899990000",
@@ -28,4 +26,12 @@ def get_transaction_payload() -> Transaction:
           "amount": "100.12345678",
           "status": "Pending",
           "timestamp": "2024-10-15T12:34:56Z"
+     }
+     
+@pytest.fixture
+def get_transaction_payload_400() -> dict:
+     return {  
+          "txHash": "0xabc123def4567890abc123def4567890abc123def4567890abc123def4567890",
+          "senderAddress": "0x1111222233334444555566667777888899990000",
+          "recipientAddress": "0x0000111122223333444455556666777788889999",
      }
