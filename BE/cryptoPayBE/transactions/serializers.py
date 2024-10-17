@@ -9,9 +9,20 @@ class TransactionSerializer(serializers.ModelSerializer):
         model = Transaction
         fields = "__all__"
 
-    def post(self, request):
+    def post(self, request) -> Response:
         serializedTxn = TransactionSerializer(data=request.data)
         if serializedTxn.is_valid():
             serializedTxn.save()
             return Response(serializedTxn.data, status=status.HTTP_201_CREATED)
         return Response(serializedTxn.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def get(self, transactionHash) -> Response:
+        try:
+            transaction = Transaction.objects.get(tx_hash=transactionHash)
+        except Transaction.DoesNotExist:
+            return Response(
+                {"error": "Transaction not found"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
+        serializer = TransactionSerializer(transaction)
+        return Response(serializer.data)

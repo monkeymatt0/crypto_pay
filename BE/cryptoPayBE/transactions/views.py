@@ -8,3 +8,8 @@ serializer = TransactionSerializer()
 @api_view(["POST"])
 def create_transaction(request):
     return serializer.post(request=request)
+
+
+@api_view(["GET"])
+def get_transaction_status(request, transactionHash):
+    return serializer.get(transactionHash)
