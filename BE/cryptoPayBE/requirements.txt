@@ -3,3 +3,6 @@ djangorestframework
 django-filter
 django-cors-headers
 python-dotenv
+django-extensions
+
+pytest-django

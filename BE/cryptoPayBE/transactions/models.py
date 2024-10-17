@@ -17,3 +17,4 @@ class Transaction(models.Model):
 
     def __str__(self):
         return f"Transaction {self.txHash}: {self.status}"
+        
