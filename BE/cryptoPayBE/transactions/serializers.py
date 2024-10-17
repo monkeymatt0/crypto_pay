@@ -8,7 +8,7 @@ class TransactionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Transaction
         fields = "__all__"
-        
+
     def post(self, request):
         serializedTxn = TransactionSerializer(data=request.data)
         if serializedTxn.is_valid():
