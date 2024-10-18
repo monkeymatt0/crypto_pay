@@ -12,7 +12,7 @@ class TransactionSerializer(serializers.ModelSerializer):
     def post(self, request) -> Response:
         serializedTxn = TransactionSerializer(data=request.data)
         if serializedTxn.is_valid():
-            serializedTxn.save()
+            transaction = serializedTxn.save()
             return Response(serializedTxn.data, status=status.HTTP_201_CREATED)
         return Response(serializedTxn.errors, status=status.HTTP_400_BAD_REQUEST)
 
