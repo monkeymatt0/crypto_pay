@@ -4,7 +4,7 @@ This project is meant to be a gateway to perform transaction on the blockchain o
 It is for testing basic web3 functionality, the blockchain which we will interact have 2 configuration:
 
 - DEVELOPMENT_BLOCKCHAIN -> Use Ganache to simulate it
-- PRODUCTION_BLOCKCHAIN -> With this one we can go on the mainnet or on testnet like Sepolia
+- PRODUCTION_BLOCKCHAIN -> With this one we can go on the mainnet or on a testnet like Sepolia
 
 The entire application is made of BE and FE (not started yet).
 
@@ -14,7 +14,7 @@ The architecture will be REST
 
 The backend is written in Python3.12.3, it uses djangorestframework with other packages.
 
-To not install all the packages on you global python we will need to create a virtual environment.
+To not install all the packages on your global python we will need to create a virtual environment.
 We can achieve this by using this command on terminal:
 
 ```
@@ -41,7 +41,7 @@ For env folder I mean the name that has been given to the environment.
 
 ### Upgrade pip
 
-A thing that I always do before install the requirements is to update pip by following these steps:
+A thing that I always do before install the requirements is to upgrade pip by following these steps:
 
 1. Activate the environment
 
@@ -67,9 +67,9 @@ pip install -r requirements.txt
 
 This will automatically install all the dependency needed for the project to work properly
 
-### Purpose
+### BE - Purpose
 
-The purpose of the backend is really simple, store the transaction detail:
+The purpose of the backend is really simple, store the transactions' details:
 
 - transaction hash
 - sender address
@@ -86,10 +86,10 @@ When we will create a transaction on the blockchain we will store a record insid
 This transaction will not be received instantly but instead will require a bit of time.
 
 So we need a worker that periodically check the status of the transaction the are still pending.
-This worked is then divided in 2 phases:
+This worker is then divided in 3 phases:
 
-1. Fetch all pending transaction
+1. Fetch all pending transaction from DB
 2. Contact the blockchain to check what is the status
-3. Update the status of the transaction
+3. Update the status of the transaction on the DB
 
 TODO: Explain how the worker works
