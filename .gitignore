@@ -5,3 +5,5 @@ BE/cryptoPayBE/env
 
 BE/cryptoPayBE/*/*/__pycache__
 BE/cryptoPayBE/*/__pycache__
+BE/cryptoPayBE/transactions/management/__pycache__
+BE/cryptoPayBE/transactions/management/commands/__pycache__

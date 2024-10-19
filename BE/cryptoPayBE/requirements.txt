@@ -6,3 +6,7 @@ python-dotenv
 django-extensions
 
 pytest-django
+web3
+celery
+django-celery-beat
+redis
