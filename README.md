@@ -18,7 +18,7 @@ To not install all the packages on your global python we will need to create a v
 We can achieve this by using this command on terminal:
 
 ```
-python3 -n venv <your_env_name>
+python3 -m venv <your_env_name>
 ```
 
 So for example if I run:
