@@ -100,10 +100,10 @@ Once you have installed celery and django celery beat you have to run the migrat
 python manage.py migrate django_celery_beat
 ```
 
-Of course the DB needs to be start before run this command.
+Of course the DB needs to be started before run this command.
 
-Celery works with redis or also rubbitMQ in this case we will use redis.
-For this reason we need to also start redis and set a couple of env variable (example of env var will be given after)
+Celery works with redis or also rabbitMQ in this case we will use redis.
+For this reason we need to also start redis and set a couple of env variable (example of env var will be given after for now look at env.example file)
 
 To properly set the worker we have to make a couple of steps:
 
