@@ -1,7 +1,7 @@
 # CryptoPay Gateway
 
 This project is meant to be a gateway to perform transaction on the blockchain of ethereum.
-It is for testing basic web3 functionality, the blockchain which we will interact have 2 configuration:
+It is for testing basic web3 functionality, the blockchain which we will with interact have 2 configuration:
 
 - DEVELOPMENT_BLOCKCHAIN -> Use Ganache to simulate it
 - PRODUCTION_BLOCKCHAIN -> With this one we can go on the mainnet or on a testnet like Sepolia
