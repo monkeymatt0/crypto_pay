@@ -92,4 +92,38 @@ This worker is then divided in 3 phases:
 2. Contact the blockchain to check what is the status
 3. Update the status of the transaction on the DB
 
-TODO: Explain how the worker works
+### Settings
+
+Once you have installed celery and django celery beat you have to run the migration to make celery works properly:
+
+```
+python manage.py migrate django_celery_beat
+```
+
+Of course the DB needs to be start before run this command.
+
+Celery works with redis or also rubbitMQ in this case we will use redis.
+For this reason we need to also start redis and set a couple of env variable (example of env var will be given after)
+
+To properly set the worker we have to make a couple of steps:
+
+1. call:
+
+```
+python manage.py <name of your task creator>
+```
+
+At this point you have created the task a written in your DB all the data needed to make worker works properly
+Example:
+my task creator name is "task_creator" => Is setted to run every 5 minutes
+then the command will look like this:
+
+```
+python manage.py task_creator
+```
+
+2. Start celery and django celery beat:
+
+```
+celery -A <your_project_name> worker --beat --loglevel=info
+```
