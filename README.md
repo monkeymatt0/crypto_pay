@@ -1,7 +1,7 @@
 # CryptoPay Gateway
 
 This project is meant to be a gateway to perform transaction on the blockchain of ethereum.
-It is for testing basic web3 functionality, the blockchain which we will interact have 2 configuration:
+It is for testing basic web3 functionality, the blockchain which we will with interact have 2 configuration:
 
 - DEVELOPMENT_BLOCKCHAIN -> Use Ganache to simulate it
 - PRODUCTION_BLOCKCHAIN -> With this one we can go on the mainnet or on a testnet like Sepolia
@@ -18,7 +18,7 @@ To not install all the packages on your global python we will need to create a v
 We can achieve this by using this command on terminal:
 
 ```
-python3 -n venv <your_env_name>
+python3 -m venv <your_env_name>
 ```
 
 So for example if I run:
@@ -100,10 +100,10 @@ Once you have installed celery and django celery beat you have to run the migrat
 python manage.py migrate django_celery_beat
 ```
 
-Of course the DB needs to be start before run this command.
+Of course the DB needs to be started before run this command.
 
-Celery works with redis or also rubbitMQ in this case we will use redis.
-For this reason we need to also start redis and set a couple of env variable (example of env var will be given after)
+Celery works with redis or also rabbitMQ in this case we will use redis.
+For this reason we need to also start redis and set a couple of env variable (example of env var will be given after for now look at env.example file)
 
 To properly set the worker we have to make a couple of steps:
 
