@@ -1,0 +1,9 @@
+
+<div>
+     <input type="text" [(ngModel)]="recipientAddress" placeholder="Recipient Address"/>
+     <input type="text" [(ngModel)]="amount" placeholder="Amount in ETH"/>
+
+     <button (onclick)="sendTransaction()" [disabled]="!userAddress || !recipientAddress || !amount"> 
+          Send Transaction
+     </button>
+</div>
