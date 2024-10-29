@@ -1,0 +1,35 @@
+:root {
+  --app-background-color: linear-gradient(
+    120deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(31, 36, 69, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+/* src/app/app.component.css */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: linear-gradient(
+    120deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(31, 36, 69, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  background-size: cover;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-wallet-div {
+  min-height: 300px;
+  max-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

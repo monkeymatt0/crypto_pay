@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background-color: linear-gradient(
+    120deg,
+    rgba(0, 212, 255, 1) 0%,
+    rgba(31, 36, 69, 1) 50%,
+    rgba(0, 0, 0, 1) 100%
+  ); /* Change this to your desired color */
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
