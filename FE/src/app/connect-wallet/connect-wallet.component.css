@@ -7,6 +7,8 @@
   padding: 20px;
   background: rgba(88, 52, 254, 1);
   border-color: transparent;
+  font-size: 1.5em;
+  font-weight: bold;
 
   transition: border-radius 1s ease, scale 1s ease, color 1s ease,
     background-color 1s ease-in;
@@ -16,7 +18,7 @@
   border-radius: 40px;
   box-shadow: none;
   border-color: transparent;
-  scale: 1.5;
+  scale: 1.2;
   padding: 20px;
   background: black;
   color: white;
