@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import detectEthereumProvider from '@metamask/detect-provider';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -7,9 +8,15 @@ import detectEthereumProvider from '@metamask/detect-provider';
 export class WalletService {
   provider: any;
   userAddress: string = '';
+  connected = new BehaviorSubject<boolean>(false);
+  isConnected$ = this.connected.asObservable();
 
   constructor() {
     this.initMetaMask();
+  }
+
+  setConnected(value: boolean) {
+    this.connected.next(value);
   }
 
   // This method will detect metamask and use initialize it
